@@ -1,15 +1,21 @@
-'use client'
-import React, { useState , useContext } from "react";
-// import { NavLink, useLocation } from "react-router-dom";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import classes from "./Header.module.css";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { FaBars, FaTimes, FaLongArrowAltDown } from "react-icons/fa";
-import donatend from "@/public/donatend.png"
-// import { useSelector } from "react-redux";
+import logo from "../../public/donatendlogo-removebg.png";
 
 export default function Header({
-  products,contact,aboutUs,bioclimatic,retractable,glass,awnings,screensBlinds
+  products,
+  contact,
+  aboutUs,
+  bioclimatic,
+  retractable,
+  glass,
+  awnings,
+  screensBlinds,
+  lang,
 }) {
   const [isClicked, setIsClicked] = useState(false);
   const handleClick = () => {
@@ -21,7 +27,7 @@ export default function Header({
       <ul className={classes.navbar}>
         <div>
           <Link href="/">
-            <img src={donatend} alt="donatend logo" />
+            <img src={logo} alt="donatend logo" />
           </Link>
         </div>
         <div
@@ -33,19 +39,19 @@ export default function Header({
           }
         >
           <li className={classes.dropdown}>
-          {products}
-           {/* <FaLongArrowAltDown className={classes.arrowUnder}/> */}
+            {products}
+            {/* <FaLongArrowAltDown className={classes.arrowUnder}/> */}
             <span className={classes.dropdownContent}>
-              <Link href={`/${bioclimatic}`}>{bioclimatic}</Link>
-              <Link href={`/${retractable}}`}>{retractable}</Link>
-              <Link href={`/${glass}}`}>{glass}</Link>
-              <Link href={`/${awnings}}`}>{awnings}</Link>
-              <Link href={`/${screensBlinds}}`}>{screensBlinds}</Link>
+              <Link href={`/${lang}/${bioclimatic}`}>{bioclimatic}</Link>
+              <Link href={`/${lang}/${retractable}`}>{retractable}</Link>
+              <Link href={`/${lang}/${glass}`}>{glass}</Link>
+              <Link href={`/${lang}/${awnings}`}>{awnings}</Link>
+              <Link href={`/${lang}/${screensBlinds}`}>{screensBlinds}</Link>
             </span>
           </li>
-          
-          <Link href={`/${contact}}`}>{contact}</Link>
-          <Link href={`/${aboutUs}}`}>{aboutUs}</Link>
+
+          <Link href={`/${lang}/${contact}}`}>{contact}</Link>
+          <Link href={`${lang}//${aboutUs}}`}>{aboutUs}</Link>
         </div>
         <div className={classes.mobile} onClick={handleClick}>
           <i>{isClicked ? <FaTimes /> : <FaBars />}</i>

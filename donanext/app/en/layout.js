@@ -1,12 +1,8 @@
-import CarouselHP from "@/components/carouselHp/CarouselHp";
-import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 
-export default function HomeEn() {
-  return (
-    <main>
-      <CarouselHP />
-      <Footer
+export default function EnLayout({ children }) {
+    return <>
+        <Header
         products={"products"}
         contact={"contact"}
         aboutUs={"about Us"}
@@ -15,8 +11,7 @@ export default function HomeEn() {
         glass={"glass-systems"}
         awnings={"awnings"}
         screensBlinds={"screens-blinds"}
-        rights={"All rights reserved."}
-      />
-    </main>
-  );
-}
+        lang={"en"}
+      />  
+      {children}</>
+  }
