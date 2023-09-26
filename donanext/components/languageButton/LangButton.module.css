@@ -1,0 +1,32 @@
+.sidebar {
+    width:2rem;
+    height:auto;
+    position: fixed;
+    top:20%;
+    right:0;
+    /* writing-mode: vertical-rl; */
+    text-orientation: upright;
+    gap:0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color:var(--main-color);
+    text-shadow: 1px 3px 3px gray;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 2px;
+}
+
+.sidebar a {
+    color:var(--main-color);
+}
+
+.langButton:hover {
+    cursor: pointer;
+}
+
+.img {
+    width: 1.5rem;
+    height: auto;
+}

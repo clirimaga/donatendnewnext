@@ -1,6 +1,6 @@
 import ProductPage from "@/components/productPage/ProductPage";
 
-export default function RetractablePergola() {
+export default function GlassSysteme() {
   const images = [
     {
       src: "https://artent.com.tr/wp-content/uploads/2022/02/Glass-solutions-products.jpg",
@@ -48,6 +48,6 @@ export default function RetractablePergola() {
     },
   ];
   const text =
-    "Our Glass Systems are produced with aluminum materials draws attention with its flexibility, strong and minimal features in its bioclimatic pergola designs.";
+    "Unsere Glassysteme werden aus Aluminiummaterialien hergestellt und ziehen durch ihre Flexibilität, Stärke und minimalistischen Merkmale in ihren bioklimatischen Pergola-Designs die Aufmerksamkeit auf sich.";
   return <ProductPage images={images} gallery={gallery} text={text} />;
 }

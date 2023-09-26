@@ -1,6 +1,6 @@
 import ProductPage from "@/components/productPage/ProductPage";
 
-export default function BioclimaticPergola() {
+export default function Beschattung() {
   const images = [
     {
       src: "https://artent.com.tr/wp-content/uploads/2022/02/bioclimatic-pergolas-anatolia-8.jpg",
@@ -38,6 +38,6 @@ export default function BioclimaticPergola() {
     },
   ];
   const text =
-    "Our bioclimatic pergolas are produced with aluminum materials draws attention with its flexibility, strong and minimal features in its bioclimatic pergola designs.";
+    "Unsere bioklimatischen Pergolen werden aus Aluminiummaterialien hergestellt und ziehen durch ihre Flexibilität, Stärke und minimalistischen Merkmale in ihren bioklimatischen Pergola-Designs die Aufmerksamkeit auf sich.";
   return <ProductPage images={images} gallery={gallery} text={text} />;
 }

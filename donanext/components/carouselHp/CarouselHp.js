@@ -4,8 +4,8 @@ import "./CarouselHp.css";
 import { useRouter } from "next/navigation";
 import Carousel from "../UI/Carousel";
 import Button from "../UI/Button";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 const images = [
   {
     src: "https://artent.com.tr/wp-content/uploads/2022/02/bioclimatic-pergolas-anatolia-1.jpg",
@@ -15,7 +15,8 @@ const images = [
     h2: "Beschattung",
     texten: "Anatolia, Rolling Bioclimatic models from Dona Tend!",
     textde: "Anatolia, Rolladen modelle von Dona Tend!",
-    navigate: "/bioclimatic-pergola",
+    navigateEn: "/bioclimatic-pergola",
+    navigateDe: "/beschattung",
   },
   {
     src: "https://artent.com.tr/wp-content/uploads/2022/02/Crown-introduction.jpg",
@@ -27,7 +28,8 @@ const images = [
       "Icon, Viva, Crown, Imperial, Alba and other models from Dona Tend!",
     textde:
       "Icon, Viva, Crown, Imperial, Alba und andere modelle von Dona Tend!",
-    navigate: "/retractable-pergola",
+    navigateEn: "/retractable-pergola",
+    navigateDe: "/pergola",
   },
   {
     src: "https://artent.com.tr/wp-content/uploads/2022/02/Glass-solutions-products.jpg",
@@ -39,7 +41,8 @@ const images = [
       "Skyfix, Skymove, Guillotine, Sliding, Folding and other models from Dona Tend!",
     textde:
       "Skyfix, Skymove, Guillotine, Sliding, Folding und andere modelle von Dona Tend!",
-    navigate: "/glass-systems",
+    navigateEn: "/glass-systems",
+    navigateDe: "/glas-systeme",
   },
   {
     src: "https://artent.com.tr/wp-content/uploads/2022/02/articulated-awning-introdcution.jpg",
@@ -49,7 +52,8 @@ const images = [
     h2: "Markisen",
     texten: "Casette, Articulated, Wintent and other models from Dona Tend!",
     textde: "Casette, Articulated, Wintent und andere modelle von Dona Tend!",
-    navigate: "/awnings",
+    navigateEn: "/awnings",
+    navigateDe: "/markisen",
   },
   {
     src: "https://artent.com.tr/wp-content/uploads/2022/02/zip-screens-products.jpg",
@@ -59,19 +63,16 @@ const images = [
     h2: "Screen und Jalousie fenster",
     texten: "Zip screen, Crystal and Roof models from Dona Tend!",
     textde: "Zip screen, Kristal und Dachmodelle von  Dona Tend!",
-    navigate: "/screens-blinds",
+    navigateEn: "/screens-blinds",
+    navigateDe: "/screens-jalousie",
   },
 ];
 
 export default function CarouselHP() {
   const [slide, setSlide] = useState(0);
   const router = useRouter();
-  const handleNavigate = (url) => {
-    router.push(`/${url}`);
-  };
-
   const path = usePathname();
-  console.log(path);
+
   return (
     <Carousel images={images} slide={slide} setSlide={setSlide}>
       {images.map((el, i) => (
@@ -90,7 +91,13 @@ export default function CarouselHP() {
             {path === "/en" && <p>{el.texten}</p>}
             {path === "/de" && <p>{el.textde}</p>}
 
-            <Button onClick={() => router.push(`${path}${el.navigate}`)}>
+            <Button
+              onClick={() =>
+                router.push(
+                  `${path}/${path === "/en" ? el.navigateEn : el.navigateDe}`
+                )
+              }
+            >
               {path === "/en" ? "See More!" : "Mehr Infos!"}
             </Button>
           </div>

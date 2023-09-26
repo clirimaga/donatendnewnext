@@ -38,6 +38,6 @@ export default function Awnings() {
     },
   ];
   const text =
-    "Our Awnings are produced with aluminum materials draws attention with its flexibility, strong and minimal features in its bioclimatic pergola designs.";
+    "Unsere Markisen werden aus Aluminiummaterialien hergestellt und ziehen durch ihre Flexibilität, Stärke und minimalistischen Eigenschaften in ihren bioklimatischen Pergola-Designs die Aufmerksamkeit auf sich.";
   return <ProductPage images={images} gallery={gallery} text={text} />;
 }

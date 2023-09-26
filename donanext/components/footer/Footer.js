@@ -1,50 +1,47 @@
-import classes from './Footer.module.css'
-import Link from 'next/link'
+import classes from "./Footer.module.css";
+import Link from "next/link";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { GiTheaterCurtains } from "react-icons/gi";
 import { MdContactMail, MdInfoOutline } from "react-icons/md";
 export default function Footer({
-    contact,aboutUs,bioclimatic,retractable,glass,awnings,screensBlinds,rights
+  contact,
+  aboutUs,
+  bioclimatic,
+  retractable,
+  glass,
+  awnings,
+  screensBlinds,
+  rights,
+  lang,
+  donaPerde,
 }) {
+
+  function removeHyphen(str) {
+    return str.replace(/-/g, " ");
+  }
+
   return (
     <div className={classes.footer}>
       <div className={classes.footerTwo}>
         <div className={classes.footerTwoLeft}>
-          <Link href="/about-us">
-            <MdInfoOutline /> 
-            {/* {lang === "en" ? "About Us" : "Über Uns"} */}
-            {aboutUs}
+          <Link href={`/${lang}/${aboutUs}`}>
+            <MdInfoOutline />
+            {removeHyphen(aboutUs)}
           </Link>
-          <Link href="/contact">
-            <MdContactMail /> 
-            {/* {lang === "en" ? "Contact" : "Kontakt"} */}
+          <Link href={`/${lang}/${contact}`}>
+            <MdContactMail />
             {contact}
           </Link>
-          <Link href="/dona-perde">
+          <Link href={`/${lang}/${donaPerde}`}>
             <GiTheaterCurtains /> Dona Perde
           </Link>
         </div>
         <div className={classes.footerTwoMiddle}>
-          <Link href="/bioclimatic-pergola">
-            {/* {lang === "en" ? "Bioclimatic Pergola" : "Beschattung"} */}
-            {bioclimatic}
-          </Link>
-          <Link href="/retractable-pergola">
-            {/* {lang === "en" ? "Retractable Pergola" : "Pergola"} */}
-            {retractable}
-          </Link>
-          <Link href="/glass-systems">
-            {/* {lang === "en" ? "Glass Systems" : "Wintergarten"} */}
-            {glass}
-          </Link>
-          <Link href="/awnings">
-            {/* {lang === "en" ? "Awnings" : "Markisen"} */}
-            {awnings}
-          </Link>
-          <Link href="/screens-blinds">
-            {/* {lang === "en" ? "Screens and Blinds" : "Screen und Jalousie"} */}
-             {screensBlinds}
-          </Link>
+          <Link href={`/${lang}/${bioclimatic}`}>{removeHyphen(bioclimatic)}</Link>
+          <Link href={`/${lang}/${retractable}`}>{removeHyphen(retractable)}</Link>
+          <Link href={`/${lang}/${glass}`}>{removeHyphen(glass)}</Link>
+          <Link href={`/${lang}/${awnings}`}>{awnings}</Link>
+          <Link href={`/${lang}/${screensBlinds}`}>{screensBlinds}</Link>
         </div>
         <div className={classes.footerTwoRight}>
           <span>
@@ -69,11 +66,8 @@ export default function Footer({
       </div>
       <div className={classes.footerThree}>
         <h3>2023 © Dona Tend™</h3>
-        <p>
-          {/* {lang === "en" ? "All rights reserved." : "Alle Rechte vorbehalten."} */}
-          {rights}
-        </p>
+        <p>{rights}</p>
       </div>
     </div>
-  )
+  );
 }

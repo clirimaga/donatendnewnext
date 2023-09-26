@@ -1,21 +1,26 @@
 import ProductPage from "@/components/productPage/ProductPage";
 
-export default function Awnings() {
+export default function Pergola() {
   const images = [
     {
-      src: "https://artent.com.tr/wp-content/uploads/2022/02/casette-awning-introduction.jpg",
-      h1: "Casette",
-      alt: "Casette",
+      src: "https://artent.com.tr/wp-content/uploads/2022/02/viva-introduction.jpg",
+      alt: "Viva Pergola",
     },
     {
-      src: "https://artent.com.tr/wp-content/uploads/2022/02/articulated-awning-introdcution.jpg",
-      h1: "Articulated",
-      alt: "Articulated",
+      src: "https://artent.com.tr/wp-content/uploads/2022/02/Iconintroduction.jpg",
+      alt: "Icon Pergola",
     },
     {
-      src: "https://artent.com.tr/wp-content/uploads/2022/02/wintent-introduction.jpg",
-      h1: "Wintent",
-      alt: "Wintent",
+      src: "https://artent.com.tr/wp-content/uploads/2022/02/Crown-introduction.jpg",
+      alt: "Crown Pergola",
+    },
+    {
+      src: "https://artent.com.tr/wp-content/uploads/2022/02/imperial-introduction.jpg",
+      alt: "Imperial Pergola",
+    },
+    {
+      src: "https://artent.com.tr/wp-content/uploads/2022/02/alba-introduction.jpg",
+      alt: "Alba Pergola",
     },
   ];
 
@@ -38,6 +43,6 @@ export default function Awnings() {
     },
   ];
   const text =
-    "Our Awnings are produced with aluminum materials draws attention with its flexibility, strong and minimal features in its bioclimatic pergola designs.";
+    "Unsere versenkbaren Pergolen werden aus Aluminiummaterialien hergestellt und ziehen durch ihre Flexibilität, Stärke und minimalistischen Merkmale in ihren bioklimatischen Pergola-Designs die Aufmerksamkeit auf sich.";
   return <ProductPage images={images} gallery={gallery} text={text} />;
 }

@@ -1,3 +1,4 @@
+'use client'
 import React,{ Fragment , useState} from 'react';
 import Carousel from '../UI/Carousel';
 import Gallery from '../UI/Gallery';
