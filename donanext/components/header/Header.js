@@ -7,14 +7,8 @@ import { FaBars, FaTimes, FaLongArrowAltDown } from "react-icons/fa";
 import logo from "../../public/donatendlogo-removebg.png";
 
 export default function Header({
-  products,
-  contact,
-  aboutUs,
-  bioclimatic,
-  retractable,
-  glass,
-  awnings,
-  screensBlinds,
+  linkNames,
+  linkPaths,
   lang,
 }) {
   const [isClicked, setIsClicked] = useState(false);
@@ -42,21 +36,27 @@ export default function Header({
           }
         >
           <li className={classes.dropdown}>
-            {products}
+            {linkNames.products}
             <span className={classes.dropdownContent}>
-              <Link href={`/${lang}/${bioclimatic}`}>
-                {removeHyphen(bioclimatic)}
+              <Link href={`/${lang}/${linkPaths.bioclimatic}`}>
+                {removeHyphen(linkNames.bioclimatic)}
               </Link>
-              <Link href={`/${lang}/${retractable}`}>
-                {removeHyphen(retractable)}
+              <Link href={`/${lang}/${linkPaths.retractable}`}>
+                {removeHyphen(linkNames.retractable)}
               </Link>
-              <Link href={`/${lang}/${glass}`}>{removeHyphen(glass)}</Link>
-              <Link href={`/${lang}/${awnings}`}>{awnings}</Link>
-              <Link href={`/${lang}/${screensBlinds}`}>{screensBlinds}</Link>
+              <Link href={`/${lang}/${linkPaths.glass}`}>
+                {removeHyphen(linkNames.glass)}
+              </Link>
+              <Link href={`/${lang}/${linkPaths.awnings}`}>{linkNames.awnings}</Link>
+              <Link href={`/${lang}/${linkPaths.screensBlinds}`}>
+                {linkNames.screensBlinds}
+              </Link>
             </span>
           </li>
-          <Link href={`/${lang}/${contact}`}>{contact}</Link>
-          <Link href={`/${lang}/${aboutUs}`}>{removeHyphen(aboutUs)}</Link>
+          <Link href={`/${lang}/${linkPaths.contact}`}>{linkNames.contact}</Link>
+          <Link href={`/${lang}/${linkPaths.aboutUs}`}>
+            {removeHyphen(linkNames.aboutUs)}
+          </Link>
         </div>
         <div className={classes.mobile} onClick={handleClick}>
           <i>{isClicked ? <FaTimes /> : <FaBars />}</i>

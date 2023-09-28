@@ -8,18 +8,33 @@ import Image from "next/image";
 
 export default function LanguageButton() {
   const completePath = usePathname();
-  const realPath = completePath.substring(0, 3);
-  // console.log(completePath);
-  // console.log(realPath);
+
+  function getLastLetterIndex(str) {
+    for (let i = str.length - 1; i >= 0; i--) {
+      if (/[a-zA-Z]/.test(str[i])) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  const lastLetterIndex = getLastLetterIndex(completePath);
+  const subPath = completePath.substring(3, lastLetterIndex + 1);
+  const mainPath = completePath.substring(0, 3);
+
   return (
     <div className={classes.sidebar} title="Change Language">
-      {realPath === "/en" ? (
-        <Link href="/de" className={classes.langButton}>
+      {mainPath === "/en" ? (
+        <Link href={`/de/${subPath}`} className={classes.langButton}>
           <Image src={de} className={classes.img} alt="de" />
         </Link>
       ) : (
-        <Link href="/en" className={classes.langButton} alt="en">
-          <Image src={en} className={classes.img} />
+        <Link
+          href={`/en/${subPath}`}
+          className={classes.langButton}
+          alt="en"
+        >
+          <Image src={en} className={classes.img} alt="en" />
         </Link>
       )}
     </div>

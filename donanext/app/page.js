@@ -1,11 +1,6 @@
-
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation";
 
 export default function Home() {
-    redirect('/en')
-  return (
-    <main>
-
-    </main>
-  );
+  redirect("/en");
+  return <main></main>;
 }

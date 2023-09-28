@@ -4,18 +4,12 @@ import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { GiTheaterCurtains } from "react-icons/gi";
 import { MdContactMail, MdInfoOutline } from "react-icons/md";
 export default function Footer({
-  contact,
-  aboutUs,
-  bioclimatic,
-  retractable,
-  glass,
-  awnings,
-  screensBlinds,
+  linkNames,
+  linkPaths,
   rights,
   lang,
   donaPerde,
 }) {
-
   function removeHyphen(str) {
     return str.replace(/-/g, " ");
   }
@@ -24,24 +18,28 @@ export default function Footer({
     <div className={classes.footer}>
       <div className={classes.footerTwo}>
         <div className={classes.footerTwoLeft}>
-          <Link href={`/${lang}/${aboutUs}`}>
+          <Link href={`/${lang}/${linkPaths.aboutUs}`}>
             <MdInfoOutline />
-            {removeHyphen(aboutUs)}
+            {removeHyphen(linkNames.aboutUs)}
           </Link>
-          <Link href={`/${lang}/${contact}`}>
+          <Link href={`/${lang}/${linkPaths.contact}`}>
             <MdContactMail />
-            {contact}
+            {linkNames.contact}
           </Link>
           <Link href={`/${lang}/${donaPerde}`}>
             <GiTheaterCurtains /> Dona Perde
           </Link>
         </div>
         <div className={classes.footerTwoMiddle}>
-          <Link href={`/${lang}/${bioclimatic}`}>{removeHyphen(bioclimatic)}</Link>
-          <Link href={`/${lang}/${retractable}`}>{removeHyphen(retractable)}</Link>
-          <Link href={`/${lang}/${glass}`}>{removeHyphen(glass)}</Link>
-          <Link href={`/${lang}/${awnings}`}>{awnings}</Link>
-          <Link href={`/${lang}/${screensBlinds}`}>{screensBlinds}</Link>
+          <Link href={`/${lang}/${linkPaths.bioclimatic}`}>
+            {removeHyphen(linkNames.bioclimatic)}
+          </Link>
+          <Link href={`/${lang}/${linkPaths.retractable}`}>
+            {removeHyphen(linkNames.retractable)}
+          </Link>
+          <Link href={`/${lang}/${linkPaths.glass}`}>{removeHyphen(linkNames.glass)}</Link>
+          <Link href={`/${lang}/${linkPaths.awnings}`}>{linkNames.awnings}</Link>
+          <Link href={`/${lang}/${linkPaths.screensBlinds}`}>{linkNames.screensBlinds}</Link>
         </div>
         <div className={classes.footerTwoRight}>
           <span>
