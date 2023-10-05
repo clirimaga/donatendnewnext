@@ -1,0 +1,34 @@
+.cardSection {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 1.1rem;
+    /* background-color: rgba(231, 176, 47,0.2); */
+  }
+
+  .card {
+    flex: 1;
+    max-width: calc(33.33% - 5rem); /* Three cards in a row with some spacing */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .card img {
+    width: 50%;
+    height: 15rem;
+    filter: drop-shadow(0 0 0.75rem var(--main-color));
+}
+
+  @media screen and (max-width: 768px) {
+    .cardSection {
+      flex-direction: column; 
+      align-items: center;
+    }
+    .card {
+      max-width: 100%; 
+      margin-bottom: 20px; 
+    }
+    
+  }
+  

@@ -5,12 +5,9 @@ import classes from "./Header.module.css";
 // import { BsMoon, BsSun } from "react-icons/bs";
 import { FaBars, FaTimes, FaLongArrowAltDown } from "react-icons/fa";
 import logo from "../../public/donatendlogo-removebg.png";
+import Image from "next/image";
 
-export default function Header({
-  linkNames,
-  linkPaths,
-  lang,
-}) {
+export default function Header({ linkNames, linkPaths, lang }) {
   const [isClicked, setIsClicked] = useState(false);
   const handleClick = () => {
     setIsClicked((isClicked) => !isClicked);
@@ -25,7 +22,13 @@ export default function Header({
       <ul className={classes.navbar}>
         <>
           <Link href="/">
-            <img src={logo} alt="donatend logo" />
+            <Image
+              src={logo}
+              alt="donatend logo"
+              width={100}
+              height={100}
+              quality={100}
+            />
           </Link>
         </>
         <div
@@ -47,13 +50,17 @@ export default function Header({
               <Link href={`/${lang}/${linkPaths.glass}`}>
                 {removeHyphen(linkNames.glass)}
               </Link>
-              <Link href={`/${lang}/${linkPaths.awnings}`}>{linkNames.awnings}</Link>
+              <Link href={`/${lang}/${linkPaths.awnings}`}>
+                {linkNames.awnings}
+              </Link>
               <Link href={`/${lang}/${linkPaths.screensBlinds}`}>
                 {linkNames.screensBlinds}
               </Link>
             </span>
           </li>
-          <Link href={`/${lang}/${linkPaths.contact}`}>{linkNames.contact}</Link>
+          <Link href={`/${lang}/${linkPaths.contact}`}>
+            {linkNames.contact}
+          </Link>
           <Link href={`/${lang}/${linkPaths.aboutUs}`}>
             {removeHyphen(linkNames.aboutUs)}
           </Link>
