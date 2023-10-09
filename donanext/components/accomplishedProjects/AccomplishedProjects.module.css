@@ -1,0 +1,37 @@
+.dachRegion {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.accomplishedProjects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.accomplishedProject {
+    position: relative;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+.accomplishedProject h3 {
+    position: absolute;
+    top: 0;
+    left:50%;
+    transform: translateX(-50%) ;
+    font-size: 2rem;
+    color: white;
+    border-bottom: 3px solid white;
+}
+
+.accomplishedProject img  {
+    height:20rem;
+    width: 20rem;
+    border-radius: 50%; 
+}

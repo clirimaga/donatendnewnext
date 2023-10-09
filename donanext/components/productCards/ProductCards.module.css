@@ -16,6 +16,10 @@
   overflow: hidden;
 }
 
+.visible {
+    opacity: 1;
+}
+
 /* .svg {
     position: absolute;
     left:0;

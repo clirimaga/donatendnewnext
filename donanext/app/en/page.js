@@ -3,7 +3,8 @@ import fsPromises from "fs/promises";
 import CarouselHP from "@/components/carouselHp/CarouselHp";
 import CardSection from "@/components/cardSection/CardSection";
 import ProductCards from "@/components/productCards/ProductCards";
-
+import AccomplishedProjects from "@/components/accomplishedProjects/AccomplishedProjects";
+import ProjectSteps from "@/components/projectSteps/ProjectSteps";
 const images = [
   {
     src: "https://artent.com.tr/wp-content/uploads/2022/02/bioclimatic-pergolas-anatolia-1.jpg",
@@ -61,6 +62,33 @@ const images = [
   },
 ];
 
+const steps = [
+  {
+    name: "Order Processing",
+    text: "We begin by carefully processing orders, capturing important project details like concept, specifications, dimensions, pricing, and deadlines. This sets the stage for successful project execution, emphasizing our commitment to precision and client satisfaction.",
+  },
+  {
+    name: "First Payment",
+    text: "Next, we proceed to the first payment, constituting 60% of the total project value. This upfront financial commitment establishes a solid foundation for project commencement, promoting transparency and mutual dedication to its successful execution.",
+  },
+  {
+    name: "Production",
+    text: "We begin by carefully processing orders, capturing important project details like concept, specifications, dimensions, pricing, and deadlines. This sets the stage for successful project execution, emphasizing our commitment to precision and client satisfaction.",
+  },
+  {
+    name: "Transportation",
+    text: "We begin by carefully processing orders, capturing important project details like concept, specifications, dimensions, pricing, and deadlines. This sets the stage for successful project execution, emphasizing our commitment to precision and client satisfaction.",
+  },
+  {
+    name: "Second Payment",
+    text: "The first step is processing the order.In this step take part project idea,type,measurements,price and deadline is set",
+  },
+  {
+    name: "Montage",
+    text: "The first step is processing the order.In this step take part project idea,type,measurements,price and deadline is set",
+  },
+];
+
 export default async function HomeEn() {
   return (
     <main>
@@ -68,10 +96,10 @@ export default async function HomeEn() {
       <ProductCards
         images={images}
         title={"Get both indoor and outdoor pleasures together"}
-        info1={
-          "Designed to work even in the harshest climatic conditions."
+        info1={"Designed to work even in the harshest climatic conditions."}
+        info2={
+          "Use your outdoors with peace of mind regardless of the season and weather"
         }
-        info2={"Use your outdoors with peace of mind regardless of the season and weather"}
       />
       <CardSection
         title={"Fast response"}
@@ -85,6 +113,8 @@ export default async function HomeEn() {
           "1 year of warranty on all the motors and the product itself!"
         }
       />
+      <AccomplishedProjects text="Over 150 projects completed within the DACH region,and counting..." />
+      <ProjectSteps steps={steps} />
     </main>
   );
 }

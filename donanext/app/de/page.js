@@ -1,3 +1,4 @@
+import AccomplishedProjects from "@/components/accomplishedProjects/AccomplishedProjects";
 import CardSection from "@/components/cardSection/CardSection";
 import CarouselHP from "@/components/carouselHp/CarouselHp";
 import ProductCards from "@/components/productCards/ProductCards";
@@ -83,6 +84,7 @@ export default function HomepageDe() {
         warranty={"Garantie"}
         paragraph={"1 Jahr Garantie auf alle Motoren und das Produkt selbst!"}
       />
+      <AccomplishedProjects text="Über 150 Projekte in der DACH-Region abgeschlossen, Tendenz steigend..." />
     </main>
   );
 }
