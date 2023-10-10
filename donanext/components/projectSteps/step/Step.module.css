@@ -25,6 +25,7 @@
 .step small {
   padding: 1rem;
   border-radius: 50%;
+  white-space: nowrap;
 }
 
 .step p,
@@ -37,6 +38,7 @@
   background-color: var(--main-color);
   opacity: 1;
   flex: 2;
+  border-radius: 50px;
 }
 
 .active p,
