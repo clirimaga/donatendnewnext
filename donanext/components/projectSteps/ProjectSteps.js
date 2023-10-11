@@ -5,15 +5,21 @@ import Step from "./step/Step";
 import finish from '@/public/icons/finish.png'
 import start from '@/public/icons/start.png'
 import Image from "next/image";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 const ProjectSteps = ({ steps }) => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [arrowClickable,setArrowClickable] = useState(true);
+
+  const leftArrowClickHandler = () => {
+  };
 
   return (
     <section className={classes.progressStepsWrapper}>
       <h2>Project Realization Steps</h2>
       <div className={classes.progressSteps}>
-        <Image src={start} width={50} height={50} alt="start"/>
+          <AiOutlineArrowLeft  className={arrowClickable ? classes.arrow : `${classes.arrow} ${classes.disabled}` } onClick={leftArrowClickHandler}/> 
+         <Image src={start} width={50} height={50} alt="start"/>
         {steps.map((step, index) => (
           <Step
             name={step.name}
@@ -25,6 +31,7 @@ const ProjectSteps = ({ steps }) => {
           />
           ))}
           <Image src={finish} width={50} height={50} alt="finish"/>
+          {/* <AiOutlineArrowRight onClick={rightArrowClickHandler} /> */}
         <p>{steps[currentStep].text}</p>
       </div>
     </section>

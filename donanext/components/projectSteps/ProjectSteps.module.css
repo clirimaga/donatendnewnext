@@ -17,7 +17,18 @@
   gap: 1.2rem;
 }
 
+.progressSteps p{
+  text-align: center;
+
+}
 .progressSteps img {
   color: white;
   filter:invert();
+}
+
+.arrow {
+  font-size: 3rem;
+}
+.arrow.disabled {
+ display: none;
 }
