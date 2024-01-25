@@ -11,7 +11,6 @@ export default function Step(props) {
     >
       <div className={classes.stepDisplay}>
         <small>Step {props.id + 1}</small>
-        <h3>{props.name}</h3>
       </div>
     </div>
   );

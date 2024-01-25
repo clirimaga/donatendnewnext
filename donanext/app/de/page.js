@@ -2,6 +2,7 @@ import AccomplishedProjects from "@/components/accomplishedProjects/Accomplished
 import CardSection from "@/components/cardSection/CardSection";
 import CarouselHP from "@/components/carouselHp/CarouselHp";
 import ProductCards from "@/components/productCards/ProductCards";
+import ProjectSteps from "@/components/projectSteps/ProjectSteps";
 
 const images = [
   {
@@ -59,7 +60,31 @@ const images = [
     navigate: "/screens-blinds",
   },
 ];
-
+const steps = [
+  {
+    name: "Auftragsabwicklung",
+    text: "Wir starten, indem wir Bestellungen sorgfältig bearbeiten und wichtige Projektdetails wie Konzept, Spezifikationen, Abmessungen, Preisgestaltung und Fristen erfassen. Dies legt den Grundstein für die erfolgreiche Projektausführung und unterstreicht unser Engagement für Präzision und Kundenzufriedenheit.",
+  },
+  {
+    name: "Erste Zahlung",
+    text: "Als Nächstes gehen wir zur ersten Zahlung über, die 60% des Gesamtprojektwerts ausmacht. Diese anfängliche finanzielle Verpflichtung legt einen soliden Grundstein für den Projektbeginn und fördert Transparenz sowie gegenseitige Hingabe für eine erfolgreiche Ausführung.",
+  },
+  {
+    name: "Produktion",
+    text: "Wir beginnen mit der Herstellung der Materialien mit Augenmerk auf Details und Qualität, um ein erfolgreiches Projekt zu gewährleisten.",
+  },
+  {
+    name: "Transport",
+    text: "Wir liefern Materialien direkt an den Kunden und gewährleisten Sicherheit und Pünktlichkeit durch fortschrittliche Technologie für ein reibungsloses Erlebnis.",
+  },{
+    name: "Montage",
+    text: "Es ist Montagezeit! Unser Team setzt alles mit Sorgfalt und Kreativität zusammen, um ein endgültiges Produkt zu schaffen.",
+  },
+  {
+    name: "Zweite Zahlung",
+    text: "Letzter Schritt - Der Kunde leistet die zweite Zahlung, die 40% der Gesamtkosten ausmacht. Dies sichert den Fortschritt in unserer Partnerschaft mit bequemen und sicheren Zahlungsoptionen.",
+  }
+];
 export default function HomepageDe() {
   return (
     <main>
@@ -85,6 +110,7 @@ export default function HomepageDe() {
         paragraph={"1 Jahr Garantie auf alle Motoren und das Produkt selbst!"}
       />
       <AccomplishedProjects text="Über 150 Projekte in der DACH-Region abgeschlossen, Tendenz steigend..." />
+      <ProjectSteps steps={steps} step={"schritt"} />
     </main>
   );
 }

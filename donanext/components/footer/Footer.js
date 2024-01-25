@@ -1,8 +1,13 @@
+'use client'
 import classes from "./Footer.module.css";
 import Link from "next/link";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { GiTheaterCurtains } from "react-icons/gi";
 import { MdContactMail, MdInfoOutline } from "react-icons/md";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 export default function Footer({
   linkNames,
   linkPaths,
@@ -13,9 +18,15 @@ export default function Footer({
   function removeHyphen(str) {
     return str.replace(/-/g, " ");
   }
+  useEffect(() => {
+    AOS.init({
+         duration: 800,
+         once: false,
+       })
+ }, [])
 
   return (
-    <div className={classes.footer}>
+    <div className={classes.footer} data-aos="fade-up">
       <div className={classes.footerTwo}>
         <div className={classes.footerTwoLeft}>
           <Link href={`/${lang}/${linkPaths.aboutUs}`}>

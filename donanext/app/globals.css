@@ -16,3 +16,9 @@
     color: var(--main-color);
   }
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}

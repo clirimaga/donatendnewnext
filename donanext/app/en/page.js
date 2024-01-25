@@ -73,20 +73,19 @@ const steps = [
   },
   {
     name: "Production",
-    text: "We begin by carefully processing orders, capturing important project details like concept, specifications, dimensions, pricing, and deadlines. This sets the stage for successful project execution, emphasizing our commitment to precision and client satisfaction.",
+    text: "We start making the materials with attention to detail and quality, ensuring a successful project.",
   },
   {
     name: "Transportation",
-    text: "We begin by carefully processing orders, capturing important project details like concept, specifications, dimensions, pricing, and deadlines. This sets the stage for successful project execution, emphasizing our commitment to precision and client satisfaction.",
+    text: "We deliver materials directly to the client, ensuring safety and timeliness with advanced technology for a seamless experience.",
+  },{
+    name: "Montage",
+    text: "It's montage time! Our team puts everything together with care and creativity to make a final product ",
   },
   {
     name: "Second Payment",
-    text: "The first step is processing the order.In this step take part project idea,type,measurements,price and deadline is set",
-  },
-  {
-    name: "Montage",
-    text: "The first step is processing the order.In this step take part project idea,type,measurements,price and deadline is set",
-  },
+    text: "Final Step - Client makes the second payment—40% of the total cost. This secures progress in our partnership, with convenient and secure payment options.",
+  }
 ];
 
 export default async function HomeEn() {
